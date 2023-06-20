@@ -4,7 +4,8 @@
 	 * the C code by Boniface
 	 * Return: 0
 	 */
-	int main(void) /* main function */
+	int main(void)
+       	/* main function */
 	{
 	_putchar('_');
 	_putchar('p');
