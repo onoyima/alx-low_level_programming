@@ -4,7 +4,7 @@
 	 * the C code by Boniface
 	 * Return: 0
 	 */
-	int main(void)
+	int main(void n)
 	{
 	_putchar('_');
 	_putchar('p');
