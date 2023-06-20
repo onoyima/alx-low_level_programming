@@ -1,10 +1,10 @@
-#include "main.h"
+	#include "main.h"
 	/**
 	 * main - print _putchar
 	 * the C code by Boniface
 	 * Return: 0
 	 */
-	int main(void)
+	int main(void) /* main function */
 	{
 	_putchar('_');
 	_putchar('p');
