@@ -47,7 +47,9 @@ exit(98);
 void print_magic(unsigned char *e_ident)
 {
 int index;
+
 printf(" Magic: ");
+
 for (index = 0; index < EI_NIDENT; index++)
 {
 printf("%02x", e_ident[index]);
@@ -65,6 +67,7 @@ printf(" ");
 void print_class(unsigned char *e_ident)
 {
 printf(" Class: ");
+
 switch (e_ident[EI_CLASS])
 {
 case ELFCLASSNONE:
@@ -87,6 +90,7 @@ printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 void print_data(unsigned char *e_ident)
 {
 printf(" Data: ");
+
 switch (e_ident[EI_DATA])
 {
 case ELFDATANONE:
@@ -109,7 +113,8 @@ printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 void print_version(unsigned char *e_ident)
 {
 printf(" Version: %d",
-   e_ident[EI_VERSION]);
+e_ident[EI_VERSION]);
+
 switch (e_ident[EI_VERSION])
 {
 case EV_CURRENT:
@@ -171,7 +176,7 @@ printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 void print_abi(unsigned char *e_ident)
 {
 printf(" ABI Version: %d\n",
-   e_ident[EI_ABIVERSION]);
+e_ident[EI_ABIVERSION]);
 }
 /**
  * print_type - Prints the type of an ELF header.
@@ -216,7 +221,7 @@ printf(" Entry point address: ");
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
 e_entry = ((e_entry << 8) & 0xFF00FF00) |
-  ((e_entry >> 8) & 0xFF00FF);
+((e_entry >> 8) & 0xFF00FF);
 e_entry = (e_entry << 16) | (e_entry >> 16);
 }
 
@@ -237,7 +242,7 @@ void close_elf(int elf)
 if (close(elf) == -1)
 {
 dprintf(STDERR_FILENO,
-"Error: Can't close mak %d\n", elf);
+"Error: Can't close fd %d\n", elf);
 exit(98);
 }
 }
