@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -P .. https://raw.githubusercontent.com/onoyima/alx-low_level_programming/master/0x18-dynamic_libraries/libhack.so
-export LD_PRELOAD="$PWD/../libhack.so"
+wget -P /tmp https://github.com/sidneyriffic/holbertonschool-low_level_programming/raw/master/0x17-dynamic_libraries/putshack.so
+export LD_PRELOAD=/tmp/putshack.so
